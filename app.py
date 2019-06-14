@@ -266,7 +266,9 @@ encryption_key = bytes(base64.b64decode(getKey()))
 timeNow = int(time.time())
 
 app = Flask(__name__)
+app.secret_key = os.urandom(12)
 @app.route('/')
+
 def index():
     # If they have pressed the refresh link remove the error and success messages
     if(request.args.get('action') == "refresh"):
@@ -596,5 +598,4 @@ if __name__ == '__main__':
         with open('./stores.json', 'wb') as f:
             f.write(getStores())
 
-    app.secret_key = os.urandom(12)
     app.run()
