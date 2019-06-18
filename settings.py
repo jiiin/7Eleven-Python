@@ -8,7 +8,7 @@
 # is running from. But it should be automatically downloaded on first run anyway. The stores.json file is used to
 # determine the location of a 7Eleven stores and lock in around that area.
 
-API_KEY="AIzaSyARgL63RyH1BASlhF3LaysnTs5ffpdmYC8"
+API_KEY=""
 
 # TZ: All times are displayed using the chosen timezone. Choices for Australia are:
 # Australia/ACT
