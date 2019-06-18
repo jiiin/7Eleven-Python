@@ -4,12 +4,13 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<title>7Eleven Fuel Locker</title>
+<title>DD Fuel Locker</title>
 <!-- for-mobile-apps -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- //for-mobile-apps -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -44,15 +45,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
 <!-- main -->
-<div class="audio-main w3ls">
-	<h1>7Eleven Fuel Locker</h1>
+<div class="container">
 	<div class="audio-record-list">
 	<div class="profile">
 			 <div class="profile-top wthree">
 				 <div class="pic-sec">
                      {% if session['accountID'] %}
                         <div class="pic">
-                             <img src="../static/images/7-eleven_logo.svg" alt=""/>
+                             <img src="../static/images/dd.jpg" alt=""/>
                          </div>
                          <div class="pic_info">
                              <h2>Welcome, {{ session['firstName'] }}.</h2>
@@ -79,10 +79,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                          <div class="clear"></div>
                      {% else %}
                          <div class="pic">
-                              <img src="../static/images/7-eleven_logo.svg" alt=""/>
+                              <img src="../static/images/dd.jpg" alt=""/>
                          </div>
                          <div class="pic_info">
-                             <h2>Please enter your email and password below:<br><br></h2>
+                             <h2>DD Fuel Locker<br><br></h2>
 														 <form class="form-inline mt-2 mt-md-0" action="/login" method="POST">
 															 <input class="form-control mr-sm-2" type="username" placeholder="Email" name="email"><br><br>
 															 <input class="form-control mr-sm-2" type="password" placeholder="Password"  name="password"><br><br>

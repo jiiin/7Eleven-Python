@@ -28,7 +28,7 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 html, body{
-    color: white;
+    background: #71BF45;
 	margin:0;
 	font-size: 100%;
 	font-family: 'Open Sans', sans-serif;
@@ -189,7 +189,7 @@ hr{
     max-width: 70%;
 }
 .profile-top {
-    background: rgb(00, 80, 61);
+    background: #71BF45;
     padding: 1.5em;
 }
 .pic{
@@ -198,8 +198,6 @@ hr{
 }
 .pic img{
 	width:100%;
-	border-radius:50%;
-	border:5px solid #fff;
 }
 .pic_info{
 	float:left;
