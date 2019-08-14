@@ -36,9 +36,7 @@ def listFuellock(deviceSecret, accessToken):
 
 def startLockinSession(deviceSecret, accessToken, locLat, locLong):
 
-    current_time = str(int(time.time()))
-    payload = f'{{"LastStoreUpdateTimestamp":{current_time},"Latitude":"{locLat}","Longitude":"{locLong}"}}'
-
+    payload = '{"LastStoreUpdateTimestamp":' + str(int(time.time())) + ',"Latitude":"' + locLat + '","Longitude":"' + locLong + '"}'
     tssa = generateTssa(BASE_URL + "FuelLock/StartSession", "POST", payload, accessToken)
 
     headers = {'User-Agent':'Apache-HttpClient/UNAVAILABLE (java 1.4)',
