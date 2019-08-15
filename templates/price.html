@@ -1,6 +1,5 @@
 {% extends "index.html" %}
 {% block content %}
-    <div class="automanual" align="center"><a id="aauto" href="#">Automatic</a> | <a id="aman" href="#">Manual</a><hr></div>
     <div id="automatic">
         <form class="form-inline mt-2 mt-md-0"  action="/lockin" method="POST">
             <div class="form-group">
@@ -23,25 +22,6 @@
         <h5 id="56"> U98 cheapest price found was <strong class='bold_balance'>{{ session['price3'] }}</strong> at <strong class='bold_balance'>{{ session['postcode3'] }}</strong></h5>
         <h5 id="53"> Diesel cheapest price found was <strong class='bold_balance'>{{ session['price4'] }}</strong> at <strong class='bold_balance'>{{ session['postcode4'] }}</strong></h5>
         <h5 id="54"> LPG cheapest price found was <strong class='bold_balance'>{{ session['price5'] }}</strong> at <strong class='bold_balance'>{{ session['postcode5'] }}</strong></h5>
-    </div>
-    <div id="manual">
-        <form class="form-inline mt-2 mt-md-0" action="/lockin" method="POST">
-            <h6 style="font-style: italic; margin-bottom: 2ch;">Note: Searching manually will not verify the fuel price against what could be the cheapest around. It will just lock in the price that it finds.</h6>
-            <div class="form-group">
-                <label for="fueltype">Which fuel do you want?</label>
-                <select id="manualfueltype" name="fueltype" class="custom-select">
-                  <option value="57">E10</option>
-                  <option value="52">Unleaded</option>
-                  <option value="55">Extra 95</option>
-                  <option value="56">Supreme 98</option>
-                  <option value="53">Diesel</option>
-                  <option value="54">LPG</option>
-
-                </select><br>
-                Postcode of the fuel: <input class="form-control mr-sm-2" type="text" placeholder="3150" name="postcode"><br><br>
-                <button class="btn btn-default" name="submit" value="manual" type="submit" onclick="loader.style.display = 'block'">Lock it in!</button>
-            </div>
-        </form>
     </div>
     <div id="buttonpressed">
         <h2 align="center">Hold on tight!</h2>

@@ -22,21 +22,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script>
 	$(document).ready(function(){
 		$("#buttonpressed").hide();
-		$("#manual").fadeOut("fast");
-	   $("#aauto").click(function(event){
-				$("#manual").hide();
-				$("#buttonpressed").hide();
 	      $("#automatic").fadeIn("fast");
-	   });
-	   $("#aman").click(function(event){
-	       $("#automatic").hide();
-				 $("#buttonpressed").hide();
-	       $("#manual").fadeIn("fast");
-	   });
 		 $(".btn").click(function(event){
 	       $("#automatic").hide();
-			   $("#manual").hide();
-			   $(".automanual").hide();
 	       $("#buttonpressed").fadeIn("fast");
 		 });
 	});
@@ -52,7 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 <div class="pic-sec">
                      {% if session['accountID'] %}
                         <div class="pic">
-                             <img src="../static/images/dd.jpg" alt=""/>
+                             <img src="../static/images/Luigi.png" alt=""/>
                          </div>
                          <div class="pic_info">
                              <h2>Welcome, {{ session['firstName'] }}.</h2>
@@ -79,7 +67,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                          <div class="clear"></div>
                      {% else %}
                          <div class="pic">
-                              <img src="../static/images/dd.jpg" alt=""/>
+                              <img src="../static/images/Luigi.png" alt=""/>
                          </div>
                          <div class="pic_info">
                              <h2>DD Fuel Locker<br><br></h2>
