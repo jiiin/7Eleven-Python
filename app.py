@@ -44,7 +44,7 @@ formatter = logging.Formatter(fmt="%(asctime)s %(levelname)s: %(message)s",
 ch = logging.StreamHandler(sys.stdout)
 ch.setLevel(logging.DEBUG)
 ch.setFormatter(formatter)
-fh = logging.FileHandler('{:%Y-%m-%d}.log'.format(datetime.now()))
+fh = logging.FileHandler('log\{:%Y-%m-%d}.log'.format(datetime.now()))
 fh.setLevel(logging.DEBUG)
 fh.setFormatter(formatter)
 log.addHandler(ch)
