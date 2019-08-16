@@ -36,6 +36,7 @@ import settings
 import logging
 import logging.config
 from datetime import datetime
+from pathlib import Path
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
@@ -44,7 +45,7 @@ formatter = logging.Formatter(fmt="%(asctime)s %(levelname)s: %(message)s",
 ch = logging.StreamHandler(sys.stdout)
 ch.setLevel(logging.DEBUG)
 ch.setFormatter(formatter)
-fh = logging.FileHandler('log\{:%Y-%m-%d}.log'.format(datetime.now()))
+fh = logging.FileHandler(Path('log/{:%Y-%m-%d}.txt'.format(datetime.now())))
 fh.setLevel(logging.DEBUG)
 fh.setFormatter(formatter)
 log.addHandler(ch)
