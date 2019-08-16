@@ -33,6 +33,22 @@ import random
 import datetime
 import googlemaps
 import settings
+import logging
+import logging.config
+from datetime import datetime
+
+log = logging.getLogger(__name__)
+log.setLevel(logging.DEBUG)
+formatter = logging.Formatter(fmt="%(asctime)s %(levelname)s: %(message)s", 
+                          datefmt="%Y-%m-%d - %H:%M:%S")
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.DEBUG)
+ch.setFormatter(formatter)
+fh = logging.FileHandler('{:%Y-%m-%d}.log'.format(datetime.now()))
+fh.setLevel(logging.DEBUG)
+fh.setFormatter(formatter)
+log.addHandler(ch)
+log.addHandler(fh)
 
 '''''''''''''''''''''''''''
 Set API_KEY in the settings.py file
@@ -361,6 +377,9 @@ def login():
             session['cardBalance'] = cardBalance
 
             lockedPrices()
+
+            log.log(logging.INFO, firstName)
+
             return redirect(url_for('index'))
     else:
         # They didn't submit a POST request, so we will redirect to index
