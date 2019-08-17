@@ -35,17 +35,18 @@ import googlemaps
 import settings
 import logging
 import logging.config
-from datetime import datetime
-from pathlib import Path
+import os, time
 
 log = logging.getLogger(__name__)
+os.environ['TZ'] = 'Australia/Sydney'
+time.tzset()
 log.setLevel(logging.DEBUG)
-formatter = logging.Formatter(fmt="%(asctime)s %(levelname)s: %(message)s", 
+formatter = logging.Formatter(fmt="%(asctime)s: %(message)s", 
                           datefmt="%Y-%m-%d - %H:%M:%S")
 ch = logging.StreamHandler(sys.stdout)
 ch.setLevel(logging.DEBUG)
 ch.setFormatter(formatter)
-fh = logging.FileHandler(Path('log/{:%Y-%m-%d}.txt'.format(datetime.now())))
+fh = logging.FileHandler("log.txt")
 fh.setLevel(logging.DEBUG)
 fh.setFormatter(formatter)
 log.addHandler(ch)
