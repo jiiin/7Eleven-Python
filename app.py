@@ -62,6 +62,7 @@ PRICE_URL = os.getenv('PRICE_URL',settings.PRICE_URL)
 DEVICE_NAME = os.getenv('DEVICE_NAME', settings.DEVICE_NAME)
 OS_VERSION = os.getenv('OS_VERSION', settings.OS_VERSION)
 APP_VERSION = os.getenv('APP_VERSION', settings.APP_VERSION)
+USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0"
 
 # If we haven't set the API key or it is it's default value, warn the user that we will disable the Google Maps search.
 if(API_KEY in [None,"changethis",""]):
@@ -75,7 +76,7 @@ if(os.getenv('DEVICE_ID', settings.DEVICE_ID) in [None,"changethis",""]):
 def cheapestFuelAll():
     # Just a quick way to get fuel prices from a website that is already created.
     # Thank you to master131 for this.
-    r = requests.get(PRICE_URL)
+    r = requests.get(PRICE_URL, headers={"user-agent":USER_AGENT})
     response = json.loads(r.text)
 
     # E10
@@ -105,7 +106,7 @@ def cheapestFuelAll():
 def cheapestFuel(fueltype):
     # Gets the cheapest fuel price for a certain type of fuel and the postcode
     # This is used for the automatic lock in
-    r = requests.get(PRICE_URL)
+    r = requests.get(PRICE_URL, headers={"user-agent":USER_AGENT})
     response = json.loads(r.text)
     '''
     52 = Unleaded 91
