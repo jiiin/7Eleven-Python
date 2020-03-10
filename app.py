@@ -284,7 +284,7 @@ encryption_key = bytes(base64.b64decode(getKey()))
 timeNow = int(time.time())
 
 app = Flask(__name__)
-app.secret_key = os.urandom(12)
+app.secret_key = 'yFjx4PnE89$e=su*'
 @app.route('/')
 
 def index():

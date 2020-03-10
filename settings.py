@@ -34,7 +34,7 @@ API_KEY="AIzaSyARgL63RyH1BASlhF3LaysnTs5ffpdmYC8"
 # Australia/Victoria
 # Australia/West
 # Australia/Yancowinna
-TZ="UTC"
+TZ="Australia/Sydney"
 
 # BASE_URL: 7-11 Mobile Application API End Point
 BASE_URL="https://711-goodcall.api.tigerspike.com/api/v1/"
